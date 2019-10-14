@@ -14,7 +14,7 @@ def init(app):
     if not app.debug or os.environ.get('WERKZEUG_RUN_MAIN') == 'true':
         try:
             scheduler.start()
-            print('Scheduler started')
+            # print('Scheduler started')
             atexit.register(lambda: scheduler.shutdown())
         except SchedulerAlreadyRunningError as err:
             print(err)
